@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<%- include('header') -%>
+
+<body>
+  <div class="box" id='heading'>
+    <h1><%= kindOfDay %> list!</h1>
+  </div>
+
+  <!-- <div class="box" data-aos='fade-up'> -->
+  <div class="box">
+
+    <% for(let i=0; i<todoList.length;i++) { %>
+    <form class="" action="/delete" method="post">
+      <div class="item">
+        <input type="checkbox" name="checkbox" onChange='this.form.submit()' value='<%= todoList[i]._id %>'>
+        <p>
+          <%=  todoList[i].name %>
+        </p>
+      </div>
+      <input type="hidden" name="listName" value="<%= kindOfDay %>"></input>
+    </form>
+
+    <%} %>
+    <form class="item" action="/" method="post">
+      <input type="text" name="todoItem" value="" placeholder="What's next?" autocomplete="off">
+      <button type="submit" name="list" value="<%= kindOfDay %>">Add</button>
+    </form>
+
+  </div>
+
+  <div class="list-types">
+    <div class="box" id='heading'>
+      <h2>Other lists</h2>
+      <a href="/">
+        <p>Default</p>
+      </a>
+      <% for(let i=0; i<listTypes.length;i++) { %>
+        <a href="/<%=  listTypes[i] %>">
+          <p>
+            <%=  listTypes[i] %>
+          </p>
+        </a>
+
+      <%} %>
+    </div>
+  </div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 2000
+    });
+  </script>
+</body>
+<%- include('footer') -%>
+
+</html>
