@@ -1,7 +1,7 @@
 # TODO App
 
 The purpose of this project is to show my skills in node.js and express.js. 
-App is using MongoDB as database. The views are created on the backend and send as 
+App is using MongoDB as database. The views are created on the backend and send as EJS (Embeded Javasctipr Templates) to the client. 
 I've deployed the app on Heroku: https://shrouded-fjord-23453.herokuapp.com/
 
 Screendshots:
